@@ -1,0 +1,4 @@
+.env
+.shots/
+.chrome-profile/
+.DS_Store

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skorpió Pizzéria Gyula – Webdesign-koncepció</title>
+  <meta name="description" content="Független webdesign-koncepció a gyulai Skorpió Pizzéria számára: étlap, rendelés, nyitvatartás és kapcsolat. Bemutató oldal, nem hivatalos weboldal.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#151a15">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:title" content="Skorpió Pizzéria Gyula – Webdesign-koncepció">
+  <meta property="og:description" content="Független webdesign-koncepció: étlap, rendelés és kapcsolat a gyulai Skorpió Pizzéria számára. Bemutató oldal, nem hivatalos weboldal.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ugrás a tartalomra</a>
+
+  <div class="concept-bar">
+    <div class="shell concept-inner">
+      <p><span class="concept-dot" aria-hidden="true"></span> Független webdesign-koncepció · Nem a Skorpió Pizzéria hivatalos oldala</p>
+      <a href="#disclaimer">Mi ez?</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="#kezdolap" aria-label="Skorpió Pizzéria – kezdőlap">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M21.5 9.5c-5.2 1.6-7.4 5.6-6.6 9.6.8 3.8 4.3 5.2 4.4 8.2.1 2.3-1.9 3.6-4.4 4.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M21.8 9.4l3.1-1.4M21.8 9.4l-.4-3.2M13.1 31.4l-2.7 2.2M13.1 31.4l3.1.7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="29" cy="28" r="2.6" fill="#cf3a22"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Skorpió</span>
+          <span class="brand-sub">Pizzéria · Gyula</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+        <span class="nav-toggle-label">Menü</span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Fő navigáció">
+        <ul>
+          <li><a href="#tortenet">Történet</a></li>
+          <li><a href="#etlap">Étlap</a></li>
+          <li><a href="#rendeles">Rendelés</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+        <a class="nav-cart" href="#rendeles">
+          Kosár <span class="nav-cart-count" id="navCartCount">0</span>
+        </a>
+        <a class="nav-phone" href="tel:+36703140417">
+          <span>Rendelés telefonon</span>
+          <strong>+36 70 314 0417</strong>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="kezdolap">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-mark" aria-hidden="true"></span> Jókai Mór utca 17. · Gyula belvárosa</p>
+          <h1>Gyula első<br><em>pizzériája.</em></h1>
+          <p class="lede">Kézzel dagasztott tészta, gázkemencében sült pizza, két szint és egy terasz a fák alatt. A Jókai utcán, a belvárosban – ott, ahol a város ismeri.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#rendeles">Rendelés indítása</a>
+            <a class="link-arrow" href="#etlap">Étlap megtekintése <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="hero-facts">
+            <li>
+              <span class="fact-number">01</span>
+              <span class="fact-title">Kézzel dagasztva</span>
+              <span class="fact-note">minden nap friss tészta</span>
+            </li>
+            <li>
+              <span class="fact-number">02</span>
+              <span class="fact-title">Gázkemence</span>
+              <span class="fact-note">roppanós szél, omlós bél</span>
+            </li>
+            <li>
+              <span class="fact-number">03</span>
+              <span class="fact-title">Terasz és pince</span>
+              <span class="fact-note">két szint a belvárosban</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <div class="roundel">
+            <svg class="roundel-svg" viewBox="0 0 420 420" role="img" aria-label="Pizza-szelet illusztráció a Skorpió Pizzéria színeivel">
+              <defs>
+                <path id="roundelRing" d="M210,210 m-166,0 a166,166 0 1,1 332,0 a166,166 0 1,1 -332,0"/>
+                <clipPath id="sliceClip">
+                  <path d="M127 168c14-41 152-41 166 0l-83 156z"/>
+                </clipPath>
+              </defs>
+              <circle cx="210" cy="210" r="203" fill="#cf3a22"/>
+              <circle cx="210" cy="210" r="188" fill="none" stroke="#f4ecdf" stroke-opacity=".28" stroke-width="1"/>
+              <circle cx="210" cy="210" r="152" fill="none" stroke="#f4ecdf" stroke-opacity=".18" stroke-width="1"/>
+              <g class="roundel-ring">
+                <text class="roundel-text">
+                  <textPath href="#roundelRing" startOffset="0">SKORPIÓ PIZZÉRIA · GYULA · KÉZZEL DAGASZTOTT TÉSZTA · GÁZKEMENCE · ELVITEL · KISZÁLLÍTÁS · </textPath>
+                </text>
+              </g>
+              <g class="slice" transform="translate(210 210) scale(1.14) translate(-210 -210)">
+                <path d="M127 168c14-41 152-41 166 0l-83 156z" fill="#f3d894"/>
+                <path d="M127 168c14-41 152-41 166 0-13 9-32 14-52 14h-62c-20 0-39-5-52-14z" fill="#e8b23f"/>
+                <g clip-path="url(#sliceClip)">
+                  <circle cx="166" cy="204" r="17" fill="#b5331f"/>
+                  <circle cx="246" cy="212" r="14" fill="#b5331f"/>
+                  <circle cx="200" cy="252" r="12" fill="#b5331f"/>
+                  <circle cx="148" cy="238" r="9" fill="#b5331f"/>
+                  <path d="M236 168c8-12 22-8 22 2s-12 14-22-2z" fill="#415f41"/>
+                  <path d="M170 232c-10-8-20 0-16 9s16 5 16-9z" fill="#415f41"/>
+                  <circle cx="214" cy="192" r="7" fill="#f7e6b8" opacity=".8"/>
+                  <circle cx="184" cy="276" r="6" fill="#f7e6b8" opacity=".8"/>
+                  <circle cx="236" cy="252" r="8" fill="#f7e6b8" opacity=".55"/>
+                </g>
+                <path d="M127 168c14-41 152-41 166 0" fill="none" stroke="#c98f2c" stroke-width="6" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <span class="sticker sticker-a">A belvárosban</span>
+            <span class="sticker sticker-b">Elvitelre is</span>
+          </div>
+          <p class="hero-art-note">Illusztráció · nem a pizzéria tényleges fotója</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Kézzel dagasztott tészta <i>✶</i> Gázkemence <i>✶</i> Gyulai kolbász <i>✶</i> Friss alapanyagok <i>✶</i> Terasz a fák alatt <i>✶</i> Elvitel és kiszállítás <i>✶</i></span>
+        <span>Kézzel dagasztott tészta <i>✶</i> Gázkemence <i>✶</i> Gyulai kolbász <i>✶</i> Friss alapanyagok <i>✶</i> Terasz a fák alatt <i>✶</i> Elvitel és kiszállítás <i>✶</i></span>
+      </div>
+    </div>
+
+    <section class="story" id="tortenet" aria-labelledby="storyTitle">
+      <div class="shell story-grid">
+        <div class="story-copy">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> A hely</p>
+          <h2 id="storyTitle">Nem egy új hely.<br><em>Egy régi.</em></h2>
+          <p class="story-lede">A Skorpió Gyula első pizzériája – a belvárosban, a Jókai utcán. Kétszintes ház, légkondicionált pincehelyiség, nyáron terasz a fák árnyékában.</p>
+          <p>A tészta kézzel dagasztva készül, a pizza gázkemencében sül. A kínálatban a hagyományos magyaros ízek mellett olasz tészták, hamburgerek és vegetáriánus fogások is szerepelnek.</p>
+          <p>A vendégek szerint ez a város egyik legjobban tartott pizzériája: a Google-ön 4,7, a Facebookon 4,9 az átlag. Ez a koncepció ezt a helyet mutatja meg – egy saját címen.</p>
+          <a class="link-arrow" href="#etlap">Nézd meg az étlapot <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="story-stats">
+          <div class="stat">
+            <span class="stat-value">4,7<small>/5</small></span>
+            <span class="stat-label">Google-értékelés</span>
+            <span class="stat-note">1 129 értékelés</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">4,9<small>/5</small></span>
+            <span class="stat-label">Facebook-értékelés</span>
+            <span class="stat-note">484 értékelés</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">2<small>+terasz</small></span>
+            <span class="stat-label">Szint a belvárosban</span>
+            <span class="stat-note">légkondicionált pince</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">52<small>cm</small></span>
+            <span class="stat-label">Családi pizza</span>
+            <span class="stat-note">három méretben</span>
+          </div>
+          <blockquote class="story-quote">
+            <p>„Gyula első pizzériája.”</p>
+            <cite>– a pizzéria saját bemutatása</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="etlap" aria-labelledby="menuTitle">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Étlap · minta</p>
+            <h2 id="menuTitle">Válassz, és<br><em>megsütjük.</em></h2>
+          </div>
+          <p class="section-note">Az alábbi tételek és árak demó-adatok: a valós étlapért hívd a pizzériát. A rendelés gombok egy működő, de fiktív rendelési folyamatot indítanak.</p>
+        </div>
+
+        <div class="menu-toolbar">
+          <div class="filters" role="group" aria-label="Étlap szűrése">
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Mind</button>
+            <button class="filter" type="button" data-filter="pizza" aria-pressed="false">Pizzák</button>
+            <button class="filter" type="button" data-filter="pasta" aria-pressed="false">Tészták</button>
+            <button class="filter" type="button" data-filter="main" aria-pressed="false">Főételek</button>
+            <button class="filter" type="button" data-filter="salad" aria-pressed="false">Saláták</button>
+            <button class="filter" type="button" data-filter="dessert" aria-pressed="false">Desszertek</button>
+            <button class="filter" type="button" data-filter="drink" aria-pressed="false">Italok</button>
+          </div>
+          <p class="toolbar-note">Pizza: 28 / 42 / 52 cm · plusz feltét választható</p>
+        </div>
+
+        <div class="menu-layout">
+          <div class="menu-catalog">
+            <section class="menu-group" data-group="pizza" aria-labelledby="groupPizza">
+              <div class="group-head">
+                <h3 id="groupPizza"><span>01</span> Pizzák</h3>
+                <p>Kézzel nyújtott, gázkemencében sült</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Margherita">
+                  <div class="dish-head">
+                    <h4>Margherita</h4>
+                    <p class="dish-desc">paradicsom, mozzarella, bazsalikom</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Margherita</legend>
+                    <label><input type="radio" name="size-margherita" value="28" data-price="2290" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-margherita" value="42" data-price="4690"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-margherita" value="52" data-price="6290"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 290 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Sonkás">
+                  <div class="dish-head">
+                    <h4>Sonkás</h4>
+                    <p class="dish-desc">sonka, mozzarella, paradicsom</p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Sonkás</legend>
+                    <label><input type="radio" name="size-sonkas" value="28" data-price="2490" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-sonkas" value="42" data-price="4990"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-sonkas" value="52" data-price="6690"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 490 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Gyulai">
+                  <div class="dish-head">
+                    <h4>Gyulai</h4>
+                    <p class="dish-desc">gyulai kolbász, lilahagyma, mozzarella</p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Gyulai</legend>
+                    <label><input type="radio" name="size-gyulai" value="28" data-price="2690" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-gyulai" value="42" data-price="5390"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-gyulai" value="52" data-price="7190"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 690 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Magyaros">
+                  <div class="dish-head">
+                    <h4>Magyaros</h4>
+                    <p class="dish-desc">csípős paprika, bacon, sonka, mozzarella</p>
+                    <p class="dish-tags"><span class="tag tag-hot">csípős</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Magyaros</legend>
+                    <label><input type="radio" name="size-magyaros" value="28" data-price="2790" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-magyaros" value="42" data-price="5590"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-magyaros" value="52" data-price="7490"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 790 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Gombás">
+                  <div class="dish-head">
+                    <h4>Gombás</h4>
+                    <p class="dish-desc">gomba, mozzarella, paradicsom</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Gombás</legend>
+                    <label><input type="radio" name="size-gombas" value="28" data-price="2490" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-gombas" value="42" data-price="4990"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-gombas" value="52" data-price="6690"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 490 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Skorpió">
+                  <div class="dish-head">
+                    <h4>Skorpió <span class="dish-flag">ház ajánlata</span></h4>
+                    <p class="dish-desc">csípős szalámi, jalapeño, pepperoni, mozzarella</p>
+                    <p class="dish-tags"><span class="tag tag-hot">csípős</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Skorpió</legend>
+                    <label><input type="radio" name="size-skorpio" value="28" data-price="2890" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-skorpio" value="42" data-price="5790"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-skorpio" value="52" data-price="7690"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 890 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Négy sajt">
+                  <div class="dish-head">
+                    <h4>Négy sajt</h4>
+                    <p class="dish-desc">mozzarella, gouda, parmezán, kék sajt</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Négy sajt</legend>
+                    <label><input type="radio" name="size-negysajt" value="28" data-price="2790" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-negysajt" value="42" data-price="5590"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-negysajt" value="52" data-price="7490"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 790 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+
+                <article class="dish dish-pizza" data-cat="pizza" data-name="Vegetáriánus">
+                  <div class="dish-head">
+                    <h4>Vegetáriánus</h4>
+                    <p class="dish-desc">gomba, paprika, kukorica, olívabogyó</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <fieldset class="size-picker">
+                    <legend class="sr-only">Méret – Vegetáriánus</legend>
+                    <label><input type="radio" name="size-vega" value="28" data-price="2690" checked><span>28 cm</span></label>
+                    <label><input type="radio" name="size-vega" value="42" data-price="5290"><span>42 cm</span></label>
+                    <label><input type="radio" name="size-vega" value="52" data-price="6990"><span>52 cm</span></label>
+                  </fieldset>
+                  <label class="extra-picker">
+                    <span>Plusz feltét</span>
+                    <select data-extra></select>
+                  </label>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 690 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="menu-group" data-group="pasta" aria-labelledby="groupPasta">
+              <div class="group-head">
+                <h3 id="groupPasta"><span>02</span> Tészták</h3>
+                <p>Olasz alapok, bőséges adagok</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish" data-cat="pasta" data-name="Spagetti Bolognese" data-price="3200">
+                  <div class="dish-head">
+                    <h4>Spagetti Bolognese</h4>
+                    <p class="dish-desc">darált marha, paradicsomos ragu, parmezán</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 200 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="pasta" data-name="Spagetti Carbonara" data-price="3400">
+                  <div class="dish-head">
+                    <h4>Spagetti Carbonara</h4>
+                    <p class="dish-desc">bacon, tojás, tejszín, parmezán</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 400 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="pasta" data-name="Lasagne" data-price="3600">
+                  <div class="dish-head">
+                    <h4>Lasagne</h4>
+                    <p class="dish-desc">marharagu, besamel, sajt</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 600 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="pasta" data-name="Penne Arrabiata" data-price="3100">
+                  <div class="dish-head">
+                    <h4>Penne Arrabiata</h4>
+                    <p class="dish-desc">csípős paradicsom, fokhagyma, bazsalikom</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span><span class="tag tag-hot">csípős</span></p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 100 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="menu-group" data-group="main" aria-labelledby="groupMain">
+              <div class="group-head">
+                <h3 id="groupMain"><span>03</span> Főételek</h3>
+                <p>Rántva, roston, pörköltben</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish" data-cat="main" data-name="Rántott csirkemell" data-price="3400">
+                  <div class="dish-head">
+                    <h4>Rántott csirkemell</h4>
+                    <p class="dish-desc">sült burgonya, párolt rizs, savanyúság</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 400 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="main" data-name="Rántott sertéskaraj" data-price="3300">
+                  <div class="dish-head">
+                    <h4>Rántott sertéskaraj</h4>
+                    <p class="dish-desc">sült burgonya, párolt rizs, savanyúság</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 300 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="main" data-name="Rántott sajt" data-price="3000">
+                  <div class="dish-head">
+                    <h4>Rántott sajt</h4>
+                    <p class="dish-desc">3 db, tartármártás, sült burgonya</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 000 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="main" data-name="Marhapörkölt galuskával" data-price="4400">
+                  <div class="dish-head">
+                    <h4>Marhapörkölt galuskával</h4>
+                    <p class="dish-desc">savanyúsággal</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">4 400 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="main" data-name="Skorpió burger" data-price="3200">
+                  <div class="dish-head">
+                    <h4>Skorpió burger</h4>
+                    <p class="dish-desc">házi zsemle, marhahús, cheddar, sült burgonya</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 200 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="menu-group" data-group="salad" aria-labelledby="groupSalad">
+              <div class="group-head">
+                <h3 id="groupSalad"><span>04</span> Saláták</h3>
+                <p>Könnyebb fogások</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish" data-cat="salad" data-name="Cézár saláta" data-price="3200">
+                  <div class="dish-head">
+                    <h4>Cézár saláta</h4>
+                    <p class="dish-desc">csirkemell, parmezán, kruton, cézár öntet</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">3 200 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="salad" data-name="Kertész saláta" data-price="2100">
+                  <div class="dish-head">
+                    <h4>Kertész saláta</h4>
+                    <p class="dish-desc">idényzöldség, olívaolaj, citrom</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">2 100 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="menu-group" data-group="dessert" aria-labelledby="groupDessert">
+              <div class="group-head">
+                <h3 id="groupDessert"><span>05</span> Desszertek</h3>
+                <p>A végére egy édes</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish" data-cat="dessert" data-name="Csokoládétorta" data-price="1500">
+                  <div class="dish-head">
+                    <h4>Csokoládétorta</h4>
+                    <p class="dish-desc">sötét csokoládé, tejszín</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">1 500 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="dessert" data-name="Tiramisu" data-price="1400">
+                  <div class="dish-head">
+                    <h4>Tiramisu</h4>
+                    <p class="dish-desc">mascarpone, kávé, kakaó</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">1 400 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="dessert" data-name="Palacsinta" data-price="1200">
+                  <div class="dish-head">
+                    <h4>Palacsinta</h4>
+                    <p class="dish-desc">2 db, kakaós vagy lekváros</p>
+                    <p class="dish-tags"><span class="tag tag-veg">vegetáriánus</span></p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">1 200 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="menu-group" data-group="drink" aria-labelledby="groupDrink">
+              <div class="group-head">
+                <h3 id="groupDrink"><span>06</span> Italok</h3>
+                <p>Hideg és meleg</p>
+              </div>
+              <div class="dish-grid">
+                <article class="dish" data-cat="drink" data-name="Házi limonádé 0,5 l" data-price="1200">
+                  <div class="dish-head">
+                    <h4>Házi limonádé <span class="dish-size">0,5 l</span></h4>
+                    <p class="dish-desc">citrom, menta, szóda</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">1 200 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="drink" data-name="Dreher világos 0,5 l" data-price="1400">
+                  <div class="dish-head">
+                    <h4>Dreher világos <span class="dish-size">0,5 l</span></h4>
+                    <p class="dish-desc">csapolt</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">1 400 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="drink" data-name="Coca-Cola 0,5 l" data-price="800">
+                  <div class="dish-head">
+                    <h4>Coca-Cola <span class="dish-size">0,5 l</span></h4>
+                    <p class="dish-desc">üdítő</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">800 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="drink" data-name="Ásványvíz 0,5 l" data-price="600">
+                  <div class="dish-head">
+                    <h4>Ásványvíz <span class="dish-size">0,5 l</span></h4>
+                    <p class="dish-desc">szénsavas vagy szénsavmentes</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">600 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+                <article class="dish" data-cat="drink" data-name="Espresso" data-price="700">
+                  <div class="dish-head">
+                    <h4>Espresso</h4>
+                    <p class="dish-desc">frissen őrölt</p>
+                  </div>
+                  <div class="dish-foot">
+                    <span class="dish-price">700 Ft</span>
+                    <button class="btn btn-add" type="button" data-add>Kosárba</button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <p class="menu-footnote">A feltétek ára a választott mérettől független. Az étlap demó-adat: a valós kínálatért és árakért hívd a +36 70 314 0417 számot.</p>
+          </div>
+
+          <aside class="cart" id="rendeles" aria-labelledby="cartTitle">
+            <div class="cart-head">
+              <div>
+                <p class="eyebrow eyebrow-light"><span class="eyebrow-mark" aria-hidden="true"></span> Rendelés</p>
+                <h3 id="cartTitle">A kosár</h3>
+              </div>
+              <span class="cart-count" id="cartCount" aria-live="polite">0 tétel</span>
+            </div>
+
+            <div class="cart-empty" id="cartEmpty">
+              <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"/>
+                <path d="M16 25h16M16 31h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M18 15c2-3 10-3 12 0l-6 8z" fill="currentColor" opacity=".85"/>
+              </svg>
+              <p class="empty-title">Még üres.</p>
+              <p class="empty-copy">Válassz az étlapról egy pizzát vagy fogást, és ide kerül a rendelésed.</p>
+              <a class="link-arrow link-arrow-light" href="#groupPizza">Ugrás a pizzákhoz <span aria-hidden="true">→</span></a>
+            </div>
+
+            <div class="cart-body" id="cartBody" hidden>
+              <div class="cart-step" id="cartStep">
+                <ul class="cart-list" id="cartList" aria-label="Kosár tartalma"></ul>
+
+                <fieldset class="cart-mode">
+                  <legend>Átvétel módja</legend>
+                  <label class="mode-option">
+                    <input type="radio" name="orderMode" value="delivery" checked>
+                    <span><strong>Kiszállítás</strong><small>Gyulán belül · 45–60 perc</small></span>
+                  </label>
+                  <label class="mode-option">
+                    <input type="radio" name="orderMode" value="pickup">
+                    <span><strong>Elvitel</strong><small>Jókai Mór u. 17. · 20–25 perc</small></span>
+                  </label>
+                </fieldset>
+
+                <dl class="cart-totals">
+                  <div><dt>Részösszeg</dt><dd id="cartSubtotal">0 Ft</dd></div>
+                  <div><dt id="feeLabel">Kiszállítás</dt><dd id="cartFee">590 Ft</dd></div>
+                  <div class="cart-total"><dt>Összesen</dt><dd id="cartTotal">0 Ft</dd></div>
+                </dl>
+                <p class="cart-hint" id="minHint" hidden>Kiszállításhoz a minimum 3 000 Ft.</p>
+                <button class="btn btn-primary btn-wide" id="goCheckout" type="button">Tovább az adatokhoz</button>
+                <p class="cart-demo">Demó: a megrendelés nem kerül továbbításra, adatot nem tárolunk.</p>
+              </div>
+
+              <form class="checkout" id="checkoutForm" novalidate hidden>
+                <div class="checkout-top">
+                  <button class="checkout-back" id="backToCart" type="button">← Vissza a kosárhoz</button>
+                  <p class="checkout-total">Fizetendő <strong id="checkoutTotal">0 Ft</strong></p>
+                </div>
+                <div class="field">
+                  <label for="checkoutName">Név</label>
+                  <input id="checkoutName" name="name" autocomplete="name" required>
+                  <p class="field-error" id="errorName" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label for="checkoutPhone">Telefon</label>
+                  <input id="checkoutPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+36 30 123 4567" required>
+                  <p class="field-error" id="errorPhone" aria-live="polite"></p>
+                </div>
+                <div class="field" id="addressField">
+                  <label for="checkoutAddress">Szállítási cím</label>
+                  <input id="checkoutAddress" name="address" autocomplete="street-address" placeholder="utca, házszám, emelet" required>
+                  <p class="field-error" id="errorAddress" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label for="checkoutNote">Megjegyzés <span class="label-optional">(opcionális)</span></label>
+                  <input id="checkoutNote" name="note" placeholder="pl. kapucsengő 4, csengő nélkül">
+                </div>
+                <fieldset class="pay">
+                  <legend>Fizetés</legend>
+                  <label><input type="radio" name="payment" value="cash" checked><span>Készpénz</span></label>
+                  <label><input type="radio" name="payment" value="card"><span>Kártya</span></label>
+                </fieldset>
+                <p class="field-error" id="errorCart" tabindex="-1" aria-live="polite"></p>
+                <button class="btn btn-primary btn-wide" type="submit">Megrendelés elküldése</button>
+                <p class="cart-demo">Demó: a megrendelés nem kerül továbbításra, adatot nem tárolunk.</p>
+              </form>
+
+              <div class="order-done" id="orderDone" hidden aria-live="polite">
+                <span class="done-badge" aria-hidden="true">✓</span>
+                <h4>Rendelés rögzítve</h4>
+                <p class="done-copy">Ez a demó itt véget ér – valódi rendelés nem történt.</p>
+                <dl>
+                  <div><dt>Rendelésszám</dt><dd id="doneNumber">SK-000</dd></div>
+                  <div><dt>Összeg</dt><dd id="doneTotal">0 Ft</dd></div>
+                  <div><dt>Átvétel</dt><dd id="doneMode">Kiszállítás</dd></div>
+                </dl>
+                <button class="btn btn-ghost btn-wide" id="newOrder" type="button">Új rendelés indítása</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="kapcsolat" aria-labelledby="visitTitle">
+      <div class="shell">
+        <div class="section-head visit-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Kapcsolat</p>
+            <h2 id="visitTitle">Gyere be, vagy<br><em>rendelj.</em></h2>
+          </div>
+          <p class="section-note">A belvárosban, a Jókai Mór utcán. Két szint, terasz, és egy konyha, ami este tízig dolgozik.</p>
+        </div>
+
+        <div class="visit-grid">
+          <div class="visit-card">
+            <h3>Cím</h3>
+            <address>
+              <strong>Skorpió Pizzéria</strong>
+              <span>5700 Gyula, Jókai Mór utca 17.</span>
+              <span>a belvárosban</span>
+            </address>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Skorpi%C3%B3%20Pizz%C3%A9ria%2C%205700%20Gyula%2C%20J%C3%B3kai%20M%C3%B3r%20utca%2017" target="_blank" rel="noopener">Útvonal a térképen <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="visit-card">
+            <h3>Elérhetőség</h3>
+            <a class="visit-phone" href="tel:+36703140417">+36 70 314 0417</a>
+            <a class="visit-mail" href="mailto:skorpiopizzeria@gmail.com">skorpiopizzeria@gmail.com</a>
+            <p class="visit-note">Telefonon rendelés és asztalfoglalás. Elvitelre is készítünk.</p>
+            <a class="link-arrow" href="https://www.facebook.com/pizzeria.skorpio/" target="_blank" rel="noopener">Facebook-oldal <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="visit-card visit-hours">
+            <h3>Nyitvatartás <span class="open-state" id="openState" data-state="unknown">most zárva</span></h3>
+            <dl class="hours-list">
+              <div data-day="1"><dt>Hétfő</dt><dd>11:00–22:00</dd></div>
+              <div data-day="2"><dt>Kedd</dt><dd>11:00–22:00</dd></div>
+              <div data-day="3"><dt>Szerda</dt><dd>11:00–22:00</dd></div>
+              <div data-day="4"><dt>Csütörtök</dt><dd>11:00–22:00</dd></div>
+              <div data-day="5"><dt>Péntek</dt><dd>11:00–23:00</dd></div>
+              <div data-day="6"><dt>Szombat</dt><dd>11:00–23:00</dd></div>
+              <div data-day="0"><dt>Vasárnap</dt><dd>16:00–22:00</dd></div>
+            </dl>
+            <p class="visit-note">Az adatok nyilvános adatlapokról származnak; ünnepnapokon eltérhetnek.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="disclaimer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <span class="footer-mark">Skorpió</span>
+        <p>Webdesign-koncepció a Skorpió Pizzéria számára.<br>Készült 2026-ban, bemutató céllal.</p>
+      </div>
+      <div class="footer-info">
+        <p class="footer-heading">Fontos tudnivaló</p>
+        <p>Ez egy független, bemutató célú webdesign-koncepció. Nem a Skorpió Pizzéria hivatalos weboldala, és nem áll kapcsolatban a vállalkozással. A név, a cím és a nyilvános adatok forrásból származnak; az étlap, az árak és a rendelési folyamat demó-adatok.</p>
+        <p class="footer-credit">Képek helyett saját vektoros illusztráció szerepel. Adatok: <a href="https://www.visitgyula.com/hu/latnivalok-adatlap/skorpio-pizzeria" target="_blank" rel="noopener">Visit Gyula</a>, <a href="https://restaurantguru.com/Pizzeria-Skorpio-Gyula" target="_blank" rel="noopener">Restaurant Guru</a>, <a href="https://www.facebook.com/pizzeria.skorpio/" target="_blank" rel="noopener">Facebook</a>. Gyűjtés: 2026. október 31.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Lábléc navigáció">
+        <p class="footer-heading">Oldalak</p>
+        <ul>
+          <li><a href="#kezdolap">Kezdőlap</a></li>
+          <li><a href="#tortenet">Történet</a></li>
+          <li><a href="#etlap">Étlap</a></li>
+          <li><a href="#rendeles">Rendelés</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="shell footer-bottom">
+      <p>© 2026 · Független koncepció · Nem hivatalos oldal</p>
+      <a class="back-to-top" href="#kezdolap">Vissza a tetejére <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <a class="cart-bar" href="#rendeles" id="cartBar" hidden>
+    <span class="cart-bar-label"><strong id="barCount">0 tétel</strong><small>a kosárban</small></span>
+    <span class="cart-bar-total" id="barTotal">0 Ft</span>
+    <span class="cart-bar-cta">Kosár <span aria-hidden="true">→</span></span>
+  </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
