@@ -206,8 +206,18 @@
         </div>
 
         <div class="menu-toolbar" data-reveal>
-          <div class="filters" id="filters" role="group" aria-label="Étlap szűrése"></div>
-          <p class="toolbar-note">Pizza: 28 / 42 / 52 cm · plusz feltét választható</p>
+          <div class="filters-wrap">
+            <div class="filters" id="filters" role="group" aria-label="Étlap szűrése"></div>
+            <span class="filters-fade filters-fade-left" aria-hidden="true" hidden></span>
+            <button class="filters-prev" id="filtersPrev" type="button" aria-label="Előző kategóriák" aria-controls="filters" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="filters-fade" aria-hidden="true" hidden></span>
+            <span class="filters-track" id="filtersTrack" aria-hidden="true" hidden><span class="filters-thumb" id="filtersThumb"></span></span>
+            <button class="filters-next" id="filtersNext" type="button" aria-label="További kategóriák" aria-controls="filters" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
         </div>
 
         <div id="menuBody" class="menu-body"></div>

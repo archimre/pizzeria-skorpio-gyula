@@ -313,6 +313,51 @@ function setupFilters() {
       group.hidden = filter !== 'all' && group.dataset.group !== filter;
     });
   });
+
+  const wrap = els.filters.closest('.filters-wrap');
+  const prev = wrap.querySelector('.filters-prev');
+  const next = wrap.querySelector('.filters-next');
+  const fadeLeft = wrap.querySelector('.filters-fade-left');
+  const fade = wrap.querySelector('.filters-fade');
+  const track = wrap.querySelector('.filters-track');
+  const thumb = wrap.querySelector('.filters-thumb');
+
+  const update = () => {
+    const max = els.filters.scrollWidth - els.filters.clientWidth;
+    const scrollable = max > 4;
+    const atStart = els.filters.scrollLeft <= 4;
+    const atEnd = els.filters.scrollLeft >= max - 4;
+
+    prev.hidden = !scrollable || atStart;
+    fadeLeft.hidden = !scrollable || atStart;
+    next.hidden = !scrollable || atEnd;
+    fade.hidden = !scrollable || atEnd;
+    track.hidden = !scrollable;
+
+    if (scrollable) {
+      const width = Math.max(22, (els.filters.clientWidth / els.filters.scrollWidth) * els.filters.clientWidth);
+      thumb.style.width = `${width}px`;
+      const left = max > 0 ? (els.filters.scrollLeft / max) * (els.filters.clientWidth - width) : 0;
+      thumb.style.transform = `translateX(${left}px)`;
+    }
+  };
+
+  const amount = () => Math.max(180, els.filters.clientWidth * 0.7);
+
+  prev.addEventListener('click', () => {
+    els.filters.scrollBy({ left: -amount(), behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    els.filters.scrollBy({ left: amount(), behavior: 'smooth' });
+  });
+
+  els.filters.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(update).observe(els.filters);
+  }
+  update();
 }
 
 function addToCart(name, meta, price) {
