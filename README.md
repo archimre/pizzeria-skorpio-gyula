@@ -17,12 +17,13 @@ Ezután nyissa meg a `http://localhost:8000` címet. Az `index.html` közvetlen 
 
 ## Mi van benne
 
-- **Étlap** – 27 minta tétel hat csoportban (pizzák, tészták, főételek, saláták, desszertek, italok), szűrhető kategóriákkal.
+- **Étlap** – 27 minta tétel hat csoportban (pizzák, tészták, főételek, saláták, desszertek, italok), szűrhető kategóriákkal és darabszámokkal.
 - **Pizza-méretek** – 28 / 42 / 52 cm, plusz feltét választóval; az ár a méret és a feltét szerint élőben frissül.
-- **Kosár és rendelés (demó)** – mennyiségállítás, törlés, kiszállítás/elvitel váltás, szállítási díj, minimumrendelés, űrlapvalidáció, fiktív rendelésszám és visszaigazolás.
-- **Nyitvatartás** – a mai nap kiemelése és „most nyitva / zárva” állapot a böngésző helyi ideje alapján.
+- **Kosár** – lebegő dock a képernyő alján, benne a tételszám és az összeg. A kosár egy jobb oldali panelben (mobilon alulról felcsúszó lapon) nyílik meg.
+- **Rendelés (demó)** – két lépés: kosár és átvételi mód, majd név/telefon/cím és fizetési mód. Mennyiségállítás, törlés, szállítási díj, minimumrendelés, űrlapvalidáció, fiktív rendelésszám és visszaigazolás.
+- **Nyitvatartás** – a mai nap kiemelése és „nyitva / zárva” állapot a böngésző helyi ideje alapján.
 - **Kapcsolat** – telefon, e-mail, cím, Google Térkép- és Facebook-hivatkozás.
-- **Koncepció-jelölés** – a felső sáv és a lábléc egyértelműen jelzi, hogy nem hivatalos oldal; a HTML `noindex, nofollow`.
+- **Koncepció-jelölés** – a felső sáv, a navigáció „Demó” jelölése és a lábléc egyértelműen jelzi, hogy nem hivatalos oldal; a HTML `noindex, nofollow`.
 
 A rendelés szándékosan **nem küld semmit sehova**: nincs backend, API, adatbázis vagy analitika, és a bevitt adatok nem tárolódnak. A kosár a lap újratöltésekor elvész.
 
@@ -34,19 +35,26 @@ pizzeria-skorpio-gyula/
 ├── styles.css
 ├── app.js
 ├── README.md
+├── .github/workflows/pages.yml
 └── assets/
     ├── favicon.svg
-    └── fonts/   (Instrument Serif + Manrope, WOFF2 + OFL licencek)
+    └── fonts/   (Bricolage Grotesque + Instrument Sans, WOFF2 + OFL licencek)
 ```
 
 ## Dizájn és technológia
 
-- Saját színvilág (sötét olívzöld, papírkrém, paradicsomvörös, sajtsárga, bazsalikomzöld) és saját tipográfia.
-- A hero „pizza-pecsét” saját SVG-illusztráció; nincs fotó, nincs AI-kép. A vektoros ábra a pizza-szeletet és a forgó feliratot tartalmazza, `prefers-reduced-motion` esetén megáll.
-- Betűtípusok helyben: Instrument Serif és Manrope (SIL Open Font License, a licencek az `assets/fonts/` mappában). Nincs Google Fonts CDN-hívás.
+- Sötét, meleg alap (korom, krém, paradicsomvörös, borostyán, zsályazöld), nagy Bricolage Grotesque címsorokkal és Instrument Sans szöveggel.
+- A komponensnyelve a megadott referenciákból épül fel, natív HTML/CSS/JS-ben újraértelmezve:
+  - **mobbin** – ételkiszállító-app logika: ragadós kategóriasáv, kompakt kártyák mobilon, alulról nyíló kosár;
+  - **magicui** – marquee, bento grid, number ticker, border beam, shimmer gomb, dock;
+  - **reactbits / aceternity** – sortöréses hero-reveal, spotlight-kártyák, finom dőlés (tilt), count-up;
+  - **uiverse** – méret- és fizetésválasztó chipek, mennyiségszabályzó;
+  - **21st.dev** – szekció- és kártyaritmus.
+- A hero pizza saját CSS-illusztráció (forgó felület, pepperoni, bazsalikom, sajtfoltok); a menü ikonjai saját SVG-k. Nincs fotó, nincs AI-kép.
+- Betűtípusok helyben: Bricolage Grotesque és Instrument Sans (SIL Open Font License, a licencek az `assets/fonts/` mappában). Nincs Google Fonts CDN-hívás.
 - Nincs külső szkript, iframe, térkép-beágyazás vagy követő. A Térkép és a Facebook csak hivatkozásként szerepel.
-- Reszponzív: 320, 360, 390, 414, 768, 820, 1024, 1280 és 1440 px szélességen ellenőrizve, vízszintes túlcsordulás nélkül.
-- Akadálymentesség: skip link, látható fókuszgyűrű, billentyűzetes menü (`aria-expanded`, Escape), `sr-only` feliratok, `aria-live` hibák, csökkentett mozgás támogatása. A „Kosárba” gombok egyedi `aria-label`-t kapnak.
+- Reszponzív: 320, 360, 390, 414, 768, 1024 és 1440 px szélességen ellenőrizve, vízszintes túlcsordulás nélkül. Mobilon (≤760 px) a kártyák vízszintes, kompakt elrendezésre váltanak.
+- Akadálymentesség: skip link, látható fókuszgyűrű, billentyűzetes menü (`aria-expanded`, Escape), `aria-modal` rendelési panel fókuszcsapdával és fókusz-visszaállítással, `aria-live` hibák és állapotok, egyedi `aria-label`-ek a „Kosárba” gombokon. A `prefers-reduced-motion` kikapcsolja a marquee-t, az aurorát, a forgást, a reveal-t és a számolást.
 
 ## Ellenőrzött tények és források
 
@@ -72,17 +80,17 @@ pizzeria-skorpio-gyula/
 - **A teljes étlap és minden ár.** A pizzéria étlapja szöveges formában nem érhető el: a Restaurant Guru csak felhasználói menüfotókat tartalmaz, a saját domain parkol. A fogásnevek és árak a helyi piaci sáv (2 000–4 000 Ft/fő) és a nyilvános értékelésekben említett fogások (pizza, pasta, lasagne, pizza bolognese, burger, csokoládétorta) alapján készült minták.
 - **Pizza-méretek (28/42/52 cm), plusz feltétek és áraik.** Demó-adatok.
 - **A rendelési folyamat összes szabálya:** kiszállítási díj (590 Ft), ingyenes szállítás 8 000 Ft felett, 3 000 Ft-os minimum, 45–60 perces kiszállítás, 20–25 perces elvitel, rendelésszám-formátum.
-- **A „most nyitva” állapot** a látogató böngészőjének helyi idejéből számol, nem a pizzéria valós, élő rendszeréből.
-- **A hero illusztráció és a márkajel** saját vektoros munka, nem a pizzéria logója vagy fotója.
+- **A „nyitva / zárva” állapot** a látogató böngészőjének helyi idejéből számol, nem a pizzéria valós, élő rendszeréből.
+- **A hero pizza, a menüikonok és a márkajel** saját CSS/SVG munka, nem a pizzéria logója vagy fotója.
 
 ## Közzététel GitHub Pages-en
 
 1. Hozzon létre külön repositoryt, és a **jelen mappa tartalmát** tegye a repository gyökerébe (a `website-mockups` mappa egésze nem jó, mert a Pages csak a gyökeret vagy a `/docs` mappát szolgálja ki).
 2. `git add . && git commit -m "Skorpió Pizzéria Gyula webdesign concept" && git push`.
-3. GitHub → Settings → Pages → Source: **Deploy from a branch**, Branch: `main`, Folder: `/ (root)`.
+3. GitHub → Settings → Pages → Source: **GitHub Actions** (a `.github/workflows/pages.yml` végzi a deployt), vagy állítsa be a `main` ágat gyökérként.
 4. A demo `noindex, nofollow` metát tartalmaz, hogy ne versenyezzen a hivatalos oldallal. Ezt csak a pizzéria írásos engedélyével, hivatalos átadás után érdemes eltávolítani.
 
-GitHub Actions vagy build nem szükséges.
+GitHub Actions vagy build nem szükséges a helyi futtatáshoz; a deployhoz a workflow igen.
 
 ## Következő lépés egy valódi megbízás felé
 
