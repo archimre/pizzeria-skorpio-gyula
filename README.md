@@ -4,6 +4,8 @@ Független, statikus webdesign-demo a gyulai Skorpió Pizzéria számára. Nem a
 
 A koncepció célja egy konkrét hiányosság bemutatása: a Google- és directory-adatlapok a `skorpiopizzeria.hu` domaint adják meg weboldalként, de a cím 2026. október 31-én parkolóoldalt szolgál ki. Az étlap, a rendelés és a nyitvatartás egyetlen saját felületen sem érhető el – ezt a demót egy saját, mobilon is működő étlap- és rendelési felülettel tölti ki.
 
+**Élő demó:** https://archimre.github.io/pizzeria-skorpio-gyula/ — nyilvánosan elérhető, de `noindex` jelöléssel. A linket csak a bemutatás céljára ossza meg.
+
 ## Futtatás
 
 ```bash
